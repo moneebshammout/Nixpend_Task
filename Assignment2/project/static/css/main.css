@@ -1,0 +1,75 @@
+html,
+body {
+  font-family: "Kaushan Script";
+  font-size: 100%;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  padding-top: 10rem;
+  width: 50rem;
+  margin: auto;
+}
+#head {
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+.form {
+  width: 100%;
+  margin: auto;
+}
+.inputField {
+  width: 50%;
+  height: 3rem;
+  margin: auto auto 2rem auto;
+  display: block;
+  padding: 0 2rem;
+  border: 0.18rem solid black;
+  border-radius: 1rem;
+}
+#submit {
+  display: block;
+  margin: auto auto 2rem auto;
+  width: 50%;
+  height: 5rem;
+  background-color: red;
+  border: 0.18rem solid black;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+i {
+  font-family: "Font Awesome 5 Free";
+  color: blue;
+  font-size: 1rem;
+  position: absolute;
+  right: 59%;
+  margin-top: 0.9rem;
+}
+
+.phoneIcon::after {
+  content: "\260E";
+}
