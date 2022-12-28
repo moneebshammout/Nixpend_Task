@@ -1,20 +1,6 @@
-import qrcode
 from PIL import Image
-
-
-def initQRCode():
-    """Create qrcode instance.
-
-    Returns:
-        qrcode: qrcode instance
-    """
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=10,
-        border=4,
-    )
-    return qr
+from io import BytesIO
+import pyqrcode
 
 
 def imageQrcode(text: str):
@@ -24,11 +10,15 @@ def imageQrcode(text: str):
         text (str): Text to be encoded
 
     Returns:
-        img: Qrcode image.
+        str: Qrcode image path.
     """
-    qr = initQRCode()
-    qr.add_data(text)
-    qr.make(fit=True)
-    img = qr.make_image(fill_color="black", back_color="white")
+    qr_code = pyqrcode.create(text, version=27, mode="binary")
+    qr_path = "qr_code.png"
+    qr_code.png(
+        qr_path,
+        scale=1,
+        module_color=[0, 0, 0, 128],
+        background=[0xFF, 0xFF, 0xCC],
+    )
 
-    return img
+    return qr_path

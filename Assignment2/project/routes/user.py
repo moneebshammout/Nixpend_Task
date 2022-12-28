@@ -1,4 +1,4 @@
-from flask import Blueprint, request, send_file
+from flask import Blueprint, request
 from ..service.user import getQRCodePDF
 
 users_bp = Blueprint("user", __name__)
@@ -12,6 +12,4 @@ def handler():
         PDF: pdf containing QRcode.
     """
     data = request.form
-    buffer = getQRCodePDF(data)
-    send_file(buffer, as_attachment=True, attachment_filename="qr_code.pdf")
-    return "pdf generated", 200
+    return getQRCodePDF(data)

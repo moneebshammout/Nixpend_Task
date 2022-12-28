@@ -1,30 +1,19 @@
-from PIL import Image
-from io import BytesIO
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen.canvas import Canvas
+from fpdf import FPDF
 
 
-def createPDF(img: Image):
+def createPDF(path: str):
     """Create Pdf file from image.
 
     Args:
-        img (Image): Image to be painted.
+        path (str): Image path.
 
     Returns:
-        Buffer: The byte object of the pdf.
+        str: path to pdf file.
     """
 
-    buffer = BytesIO()
-
-    # Create a PDF canvas
-    canvas = Canvas(buffer, pagesize=A4)
-
-    # Draw the QR code on the canvas
-    canvas.drawImage(img, x=10, y=10, width=100, height=100)
-
-    # Save the PDF
-    canvas.save()
-
-    # Seek to the beginning of the BytesIO object
-    buffer.seek(0)
-    return buffer
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.image(path, x=30, y=100, w=150, h=150)
+    pdf_path = "qr_code.pdf"
+    pdf.output(pdf_path, "F")
+    return pdf_path

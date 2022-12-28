@@ -1,5 +1,6 @@
-from flask import Flask, url_for, request, redirect
+from flask import Flask, abort
 from .routes import users_bp, home_bp
+from .middleware import error_middleware
 
 
 def _errorRout(app: Flask):
@@ -7,7 +8,7 @@ def _errorRout(app: Flask):
 
     @app.errorhandler(404)
     def page_not_found(error):
-        return "Sorry, the page you are looking for could not be found.", 404
+        abort(404, "Page not found")
 
 
 def _initializeRoutes(app: Flask):
@@ -21,6 +22,10 @@ def _initializeRoutes(app: Flask):
     _errorRout(app)
 
 
+def _initializeMiddlewares(app: Flask):
+    app.errorhandler(Exception)(error_middleware(app))
+
+
 def createApp():
     """Creates Flask app.
 
@@ -31,6 +36,7 @@ def createApp():
     app = Flask(
         __name__,
     )
+    _initializeMiddlewares(app)
     _initializeRoutes(app)
 
     return app

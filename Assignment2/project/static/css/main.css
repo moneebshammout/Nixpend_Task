@@ -15,14 +15,14 @@ body {
 }
 
 .content {
-  justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 50rem;
+  justify-content: center;
+  margin: auto;
   padding-top: 10rem;
   width: 50rem;
-  margin: auto;
 }
 #head {
   font-weight: bolder;
@@ -34,26 +34,26 @@ body {
   margin: auto;
 }
 .inputField {
-  width: 50%;
+  border-radius: 1rem;
+  border: 0.18rem solid black;
+  display: block;
   height: 3rem;
   margin: auto auto 2rem auto;
-  display: block;
   padding: 0 2rem;
-  border: 0.18rem solid black;
-  border-radius: 1rem;
+  width: 50%;
 }
 #submit {
-  display: block;
-  margin: auto auto 2rem auto;
-  width: 50%;
-  height: 5rem;
   background-color: red;
-  border: 0.18rem solid black;
   border-radius: 1rem;
-  text-align: center;
-  font-weight: 700;
-  font-size: 2rem;
+  border: 0.18rem solid black;
   cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  height: 5rem;
+  margin: auto auto 2rem auto;
+  text-align: center;
+  width: 50%;
 }
 
 .row {
@@ -62,12 +62,12 @@ body {
 }
 
 i {
-  font-family: "Font Awesome 5 Free";
   color: blue;
+  font-family: "Font Awesome 5 Free";
   font-size: 1rem;
+  margin-top: 0.9rem;
   position: absolute;
   right: 59%;
-  margin-top: 0.9rem;
 }
 
 .phoneIcon::after {

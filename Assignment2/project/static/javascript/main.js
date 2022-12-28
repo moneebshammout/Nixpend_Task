@@ -3,6 +3,9 @@ const emailREGX =
 const phoneREGX = /(^[0-9]{10}$)/;
 const nameREGX = /(^[a-zA-Z ]{8,}$)/;
 
+/**
+ * Validates user input before post to server.
+ */
 const validate = () => {
   const nameInput = document.querySelector("#name");
   const emailInput = document.querySelector("#email");
