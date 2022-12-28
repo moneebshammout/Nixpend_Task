@@ -1,8 +1,9 @@
 from flask import send_file
 from ..utils import qr_code, pdf
+from ..validator.user_schema import getPDFSchema
 
 
-def getQRCodePDF(data: dict):
+def getQRCodePDF(data: getPDFSchema):
     """Generates QRcode pdf based on user data.
 
     Returns:
@@ -11,6 +12,7 @@ def getQRCodePDF(data: dict):
     name = data["fullName"]
     email = data["email"]
     phone = data["phone"]
+
     try:
         qr_code_path = qr_code.imageQrcode(f"{name} {email} {phone}")
         pdf_path = pdf.createPDF(qr_code_path)
