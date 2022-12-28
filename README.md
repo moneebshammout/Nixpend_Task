@@ -3,9 +3,10 @@
 <h1>Instructions</1>
 
 <h2>How to run python app</2>
-<h3>1- pip install</3>
-<h3>2- source ./env/bin/activate to switch to virtual enviroment</3>
-<h3>3- make run</3>
+<h3>1- fill the example.env then change its name to .env</3>
+<h3>2- pip install</3>
+<h3>3- source ./env/bin/activate to switch to virtual enviroment</3>
+<h3>4- make run</3>
 
  
  <h2>endpoint</2>
