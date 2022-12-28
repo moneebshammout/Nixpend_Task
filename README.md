@@ -12,7 +12,7 @@
  <h2>endpoint</2>
  <h3> 
   <ul>
-    <li>generate pdf Post to http://localhost:3000/user</li>
+    <li>generate pdf Post to http://localhost:desired_port/user</li>
   </ul>
   </h3>
   
