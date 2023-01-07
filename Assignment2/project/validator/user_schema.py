@@ -7,3 +7,4 @@ class getPDFSchema(Schema):
     phone = fields.Int(required=True, validate=validate.Range(min=10))
 
 #//test
+#etst2
